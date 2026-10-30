@@ -16,8 +16,10 @@
 - [Project Overview](#-project-overview)
 - [Key Features](#-key-features)
 - [System Architecture](#-system-architecture)
+- [Academic Theory & DSP Pipeline](#-academic-theory--dsp-pipeline)
 - [Dataset Details](#-dataset-details)
 - [Model Performance Benchmark](#-model-performance-benchmark)
+- [College Viva-Voce Questions & Answers](#-college-viva-voce-questions--answers)
 - [Repository Structure](#-repository-structure)
 - [Quick Start Guide](#-quick-start-guide)
 - [Author & Project Owner](#-author--project-owner)
@@ -63,6 +65,29 @@ Wearable devices (smartphones, smartwatches, fitness trackers) continuously capt
 │  • Real-time Stream  │      │ • Random Forest (92.8%) │      • Frequency Domain (FFT, Peak)
 └──────────────────────┘      └─────────────────────────┘      • Vector Magnitude (Norm)
 ```
+
+---
+
+## 🔬 Academic Theory & DSP Pipeline
+
+### 1. MEMS Sensor Physics & Working Principle
+- **Capacitive Accelerometer:** Measures deflection of a microscopic proof mass suspended by silicon beams ($F = ma = kx$). The resulting differential capacitance $\Delta C = \frac{2\epsilon A}{d_0^2}x$ is converted to acceleration ($g$) across $X, Y, Z$.
+- **Vibratory Gyroscope:** Detects angular rate of rotation based on the **Coriolis Effect** ($\mathbf{F}_{\text{Coriolis}} = -2m (\mathbf{\Omega} \times \mathbf{v})$), outputting rotational velocity in $\text{rad/s}$.
+
+### 2. Digital Filtering & Decoupling Equation
+- **Butterworth Filter (20 Hz):** Attenuates high-frequency sensor noise using a 3rd-order digital low-pass Butterworth filter ($f_c = 20\text{ Hz}$).
+- **Gravity Decoupling:** Measured acceleration combines dynamic body movement $\mathbf{a}_{\text{body}}(t)$ and constant gravity $\mathbf{g}(t)$:
+  $$\mathbf{a}_{\text{total}}(t) = \mathbf{a}_{\text{body}}(t) + \mathbf{g}(t)$$
+  A low-pass filter with cutoff $f_c = 0.3\text{ Hz}$ separates static orientation from dynamic motion.
+
+### 3. Sliding Window & Mathematical Features
+- **Window Length:** 128 samples ($2.56\text{ seconds}$ @ 50 Hz), covering at least two full human strides.
+- **50% Overlap:** 64 samples ($1.28\text{ seconds}$) for continuous temporal context.
+- **Key Features:**
+  - Signal Magnitude Area: $\text{SMA} = \frac{1}{N}\sum (|a_x| + |a_y| + |a_z|)$
+  - Euclidean Vector Magnitude: $\text{VM} = \sqrt{a_x^2 + a_y^2 + a_z^2}$
+  - Time-Domain: Mean, Variance, Std, MAD, IQR, Skewness, Kurtosis, Energy, Shannon Entropy.
+  - Frequency-Domain (FFT): Peak Frequency, Spectral Energy.
 
 ---
 
@@ -139,12 +164,51 @@ Evaluated on 2,947 completely unseen test instances from 9 independent subjects:
 
 ---
 
+## 🎓 College Viva-Voce Questions & Answers (Top 5)
+
+<details>
+<summary><b>Q1: Why is the sampling rate chosen as 50 Hz?</b></summary>
+<blockquote>
+Human physical body motion occurs within 0 – 20 Hz. By the Nyquist-Shannon Sampling Theorem ($f_s \ge 2 f_{\text{max}}$), a 50 Hz sample rate satisfies $50 \ge 40\text{ Hz}$, capturing natural kinematics without aliasing or excessive battery drain.
+</blockquote>
+</details>
+
+<details>
+<summary><b>Q2: Why separate total acceleration into body and gravitational components?</b></summary>
+<blockquote>
+Total acceleration combines static gravity ($1.0g$) and dynamic user movement. Gravity ($f < 0.3\text{ Hz}$) indicates device tilt orientation relative to Earth, identifying static postures (standing vs laying). Body motion ($f > 0.3\text{ Hz}$) differentiates dynamic gaits (walking vs stairs).
+</blockquote>
+</details>
+
+<details>
+<summary><b>Q3: What is Signal Magnitude Area (SMA)?</b></summary>
+<blockquote>
+$\text{SMA} = \frac{1}{N}\sum (|a_x| + |a_y| + |a_z|)$. It calculates the cumulative 3D kinetic energy expenditure, acting as an orientation-invariant indicator of movement intensity.
+</blockquote>
+</details>
+
+<details>
+<summary><b>Q4: Why do Logistic Regression and SVM achieve ~95.6% while Decision Tree gets ~86.4%?</b></summary>
+<blockquote>
+Decision Trees make orthogonal axis-aligned splits, which struggle with continuous correlated features across 561 dimensions. Logistic Regression and SVM with RBF kernels create smooth optimal hyperplanes, maximizing generalizability.
+</blockquote>
+</details>
+
+<details>
+<summary><b>Q5: Why do Sitting and Standing have minor misclassifications?</b></summary>
+<blockquote>
+Both are stationary postures with near-zero body acceleration and identical $1.0g$ gravitational magnitude. Slight pocket orientation angles create occasional decision boundary overlap.
+</blockquote>
+</details>
+
+---
+
 ## 🚀 Quick Start Guide
 
 ### 1. Clone or Download Repository
 ```bash
-git clone <your-repository-url>
-cd <repository-folder>
+git clone https://github.com/Vignesh-655/Human-Activity-Recognition-Sensor-Data.git
+cd Human-Activity-Recognition-Sensor-Data
 ```
 
 ### 2. Install Dependencies
