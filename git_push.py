@@ -1,48 +1,59 @@
 """
-Helper script to push the local repository to GitHub.
-Can be used with standard Git or pure-Python dulwich.
+Automated Git Push Script for Vignesh-655/Human-Activity-Recognition-Sensor-Data.
 """
 
-import sys
 import os
+import sys
+import getpass
+import certifi
 
-def push_to_github():
-    print("==================================================")
-    print("🚀 Git Push Helper for HAR Capstone Project")
-    print("==================================================")
+# Fix SSL certificate verification on Windows
+os.environ['SSL_CERT_FILE'] = certifi.where()
+
+def main():
+    print("=" * 60)
+    print("🚀 Pushing to GitHub: Vignesh-655/Human-Activity-Recognition-Sensor-Data")
+    print("=" * 60)
     
+    token = None
     if len(sys.argv) > 1:
-        remote_url = sys.argv[1]
+        token = sys.argv[1].strip()
     else:
-        remote_url = input("Enter your GitHub repository URL (e.g. https://github.com/username/har-project.git): ").strip()
-        
-    if not remote_url:
-        print("Error: No remote URL provided.")
+        print("\nGitHub requires a Personal Access Token (PAT) for pushing.")
+        print("1. Go to: https://github.com/settings/tokens/new")
+        print("2. Check the 'repo' scope checkbox")
+        print("3. Click 'Generate token' and paste it below:\n")
+        try:
+            token = input("Enter GitHub Personal Access Token (ghp_...): ").strip()
+        except Exception:
+            pass
+            
+    if not token:
+        print("\n❌ Error: Token is required to authenticate with GitHub.")
         return
         
+    auth_url = f"https://{token}@github.com/Vignesh-655/Human-Activity-Recognition-Sensor-Data.git"
+    
     try:
         import dulwich.porcelain as git
         repo = git.Repo(".")
         
-        # Check if remote exists
-        config = repo.get_config()
-        print(f"Setting remote 'origin' to: {remote_url}")
-        config.set(("remote", "origin"), "url", remote_url.encode('utf-8'))
-        config.write_to_path()
-        
-        print("Pushing 'main' branch to remote origin...")
-        # Note: If credentials are required, dulwich will prompt or user can use git CLI / GitHub Desktop
-        git.push(repo, remote_url, "refs/heads/master:refs/heads/main")
-        print("✅ Successfully pushed to GitHub!")
+        # Ensure main branch exists
+        try:
+            git.branch_create(repo, 'main', force=True)
+        except Exception:
+            pass
+            
+        print("\nConnecting to GitHub and pushing files...")
+        git.push(repo, auth_url, "refs/heads/main")
+        print("\n" + "=" * 60)
+        print("🎉 SUCCESS! All project files successfully pushed to GitHub!")
+        print("View your repository at:")
+        print("👉 https://github.com/Vignesh-655/Human-Activity-Recognition-Sensor-Data")
+        print("=" * 60)
     except Exception as e:
-        print(f"\nNotice: {e}")
-        print("\nAlternatively, you can push using:")
-        print("1. Git CLI:")
-        print(f"   git remote add origin {remote_url}")
-        print("   git branch -M main")
-        print("   git push -u origin main")
-        print("2. Or open GitHub Desktop and click 'Publish repository'.")
+        print(f"\n❌ Push failed: {e}")
+        print("\nPlease check that your token has 'repo' permissions enabled.")
 
 if __name__ == "__main__":
-    push_to_github()
-
+    main()
