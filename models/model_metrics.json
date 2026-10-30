@@ -1,0 +1,242 @@
+[
+  {
+    "Model": "Support Vector Machine (SVM)",
+    "Accuracy": 0.9549,
+    "Precision_Macro": 0.9559,
+    "Recall_Macro": 0.9531,
+    "F1_Macro": 0.954,
+    "Precision_Weighted": 0.9556,
+    "Recall_Weighted": 0.9549,
+    "F1_Weighted": 0.9547,
+    "Confusion_Matrix": [
+      [
+        483,
+        5,
+        8,
+        0,
+        0,
+        0
+      ],
+      [
+        15,
+        454,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        27,
+        385,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        440,
+        48,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        17,
+        515,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        537
+      ]
+    ]
+  },
+  {
+    "Model": "Random Forest",
+    "Accuracy": 0.9277,
+    "Precision_Macro": 0.9293,
+    "Recall_Macro": 0.9249,
+    "F1_Macro": 0.9262,
+    "Precision_Weighted": 0.9291,
+    "Recall_Weighted": 0.9277,
+    "F1_Weighted": 0.9276,
+    "Confusion_Matrix": [
+      [
+        483,
+        8,
+        5,
+        0,
+        0,
+        0
+      ],
+      [
+        44,
+        421,
+        6,
+        0,
+        0,
+        0
+      ],
+      [
+        18,
+        37,
+        365,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        437,
+        54,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        41,
+        491,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        537
+      ]
+    ]
+  },
+  {
+    "Model": "Logistic Regression",
+    "Accuracy": 0.9559,
+    "Precision_Macro": 0.9588,
+    "Recall_Macro": 0.9546,
+    "F1_Macro": 0.9558,
+    "Precision_Weighted": 0.9577,
+    "Recall_Weighted": 0.9559,
+    "F1_Weighted": 0.9558,
+    "Confusion_Matrix": [
+      [
+        493,
+        0,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        24,
+        446,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        16,
+        396,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        431,
+        57,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        13,
+        519,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        5,
+        532
+      ]
+    ]
+  },
+  {
+    "Model": "Decision Tree",
+    "Accuracy": 0.8643,
+    "Precision_Macro": 0.864,
+    "Recall_Macro": 0.8607,
+    "F1_Macro": 0.8611,
+    "Precision_Weighted": 0.8652,
+    "Recall_Weighted": 0.8643,
+    "F1_Weighted": 0.8634,
+    "Confusion_Matrix": [
+      [
+        461,
+        18,
+        17,
+        0,
+        0,
+        0
+      ],
+      [
+        74,
+        362,
+        35,
+        0,
+        0,
+        0
+      ],
+      [
+        18,
+        51,
+        351,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        375,
+        116,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        71,
+        461,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        537
+      ]
+    ]
+  }
+]

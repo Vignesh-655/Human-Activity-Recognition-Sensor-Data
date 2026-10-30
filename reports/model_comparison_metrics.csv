@@ -1,0 +1,5 @@
+Model,Accuracy,Precision_Macro,Recall_Macro,F1_Macro,Precision_Weighted,Recall_Weighted,F1_Weighted
+Support Vector Machine (SVM),0.9549,0.9559,0.9531,0.954,0.9556,0.9549,0.9547
+Random Forest,0.9277,0.9293,0.9249,0.9262,0.9291,0.9277,0.9276
+Logistic Regression,0.9559,0.9588,0.9546,0.9558,0.9577,0.9559,0.9558
+Decision Tree,0.8643,0.864,0.8607,0.8611,0.8652,0.8643,0.8634
