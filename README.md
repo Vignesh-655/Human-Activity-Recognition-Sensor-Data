@@ -19,7 +19,6 @@
 - [Academic Theory & DSP Pipeline](#-academic-theory--dsp-pipeline)
 - [Dataset Details](#-dataset-details)
 - [Model Performance Benchmark](#-model-performance-benchmark)
-- [College Viva-Voce Questions & Answers](#-college-viva-voce-questions--answers)
 - [Repository Structure](#-repository-structure)
 - [Quick Start Guide](#-quick-start-guide)
 - [Author & Project Owner](#-author--project-owner)
@@ -161,45 +160,6 @@ Evaluated on 2,947 completely unseen test instances from 9 independent subjects:
         ├── confusion_matrix.png
         └── feature_importance.png
 ```
-
----
-
-## 🎓 College Viva-Voce Questions & Answers (Top 5)
-
-<details>
-<summary><b>Q1: Why is the sampling rate chosen as 50 Hz?</b></summary>
-<blockquote>
-Human physical body motion occurs within 0 – 20 Hz. By the Nyquist-Shannon Sampling Theorem ($f_s \ge 2 f_{\text{max}}$), a 50 Hz sample rate satisfies $50 \ge 40\text{ Hz}$, capturing natural kinematics without aliasing or excessive battery drain.
-</blockquote>
-</details>
-
-<details>
-<summary><b>Q2: Why separate total acceleration into body and gravitational components?</b></summary>
-<blockquote>
-Total acceleration combines static gravity ($1.0g$) and dynamic user movement. Gravity ($f < 0.3\text{ Hz}$) indicates device tilt orientation relative to Earth, identifying static postures (standing vs laying). Body motion ($f > 0.3\text{ Hz}$) differentiates dynamic gaits (walking vs stairs).
-</blockquote>
-</details>
-
-<details>
-<summary><b>Q3: What is Signal Magnitude Area (SMA)?</b></summary>
-<blockquote>
-$\text{SMA} = \frac{1}{N}\sum (|a_x| + |a_y| + |a_z|)$. It calculates the cumulative 3D kinetic energy expenditure, acting as an orientation-invariant indicator of movement intensity.
-</blockquote>
-</details>
-
-<details>
-<summary><b>Q4: Why do Logistic Regression and SVM achieve ~95.6% while Decision Tree gets ~86.4%?</b></summary>
-<blockquote>
-Decision Trees make orthogonal axis-aligned splits, which struggle with continuous correlated features across 561 dimensions. Logistic Regression and SVM with RBF kernels create smooth optimal hyperplanes, maximizing generalizability.
-</blockquote>
-</details>
-
-<details>
-<summary><b>Q5: Why do Sitting and Standing have minor misclassifications?</b></summary>
-<blockquote>
-Both are stationary postures with near-zero body acceleration and identical $1.0g$ gravitational magnitude. Slight pocket orientation angles create occasional decision boundary overlap.
-</blockquote>
-</details>
 
 ---
 

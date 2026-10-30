@@ -361,18 +361,6 @@ with tab_overview:
             st.latex(r"\text{SMA} = \frac{1}{N} \sum_{i=1}^N \left( |a_x(i)| + |a_y(i)| + |a_z(i)| \right)")
             st.caption("Orientation-invariant metric measuring cumulative 3D kinetic energy.")
 
-    with st.expander("🎓 College Viva-Voce & Technical Interview Guide"):
-        st.markdown("""
-        - **Q1: Why 50 Hz sampling rate?**  
-          *Answer:* Human body motion bandwidth is $0 - 20\\text{ Hz}$. By Nyquist's theorem ($f_s \\ge 2 f_{\\text{max}}$), $50\\text{ Hz} \\ge 40\\text{ Hz}$ avoids aliasing while conserving battery.
-        - **Q2: Why a 2.56-second sliding window?**  
-          *Answer:* Normal human walking stride takes $1.0 - 1.2\\text{ seconds}$. A 2.56s window (128 samples @ 50 Hz) captures two complete gait cycles with statistical continuity.
-        - **Q3: Why do Sitting and Standing have minor confusion?**  
-          *Answer:* Both states are static postures with near-zero body acceleration and identical $1.0g$ gravitational magnitude. Slight pocket tilt angles create boundary overlap.
-        - **Q4: Why does Logistic Regression / SVM outperform Decision Trees?**  
-          *Answer:* Decision trees create orthogonal axis-aligned splits that struggle with correlated features in high-dimensional continuous space (561 features). SVM and Softmax regression form smooth hyperplanes with superior generalization.
-        """)
-
 # ==========================================
 # TAB 2: SENSOR SIGNALS & EDA STUDIO
 # ==========================================

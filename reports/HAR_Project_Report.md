@@ -21,8 +21,7 @@
 9. [Confusion Matrix & Biomechanical Error Analysis](#9-confusion-matrix--biomechanical-error-analysis)
 10. [Web Application Architecture & Real-Time Simulation](#10-web-application-architecture--real-time-simulation)
 11. [Embedded Limitations & Future Scope](#11-embedded-limitations--future-scope)
-12. [College Viva-Voce: Top 10 Technical Questions & Answers](#12-college-viva-voce-top-10-technical-questions--answers)
-13. [References](#13-references)
+12. [References](#12-references)
 
 ---
 
@@ -294,41 +293,7 @@ The project is deployed via an interactive web dashboard using **Streamlit**:
 
 ---
 
-## 12. College Viva-Voce: Top 10 Technical Questions & Answers
-
-### Q1: Why is the sampling rate chosen as 50 Hz?
-> **Answer:** Human body kinematics (walking, running, climbing) rarely generate movement frequencies beyond $15 - 20\text{ Hz}$. According to the Nyquist-Shannon Sampling Theorem ($f_s \ge 2 f_{\text{max}}$), a sampling rate of $50\text{ Hz}$ provides sufficient temporal resolution while avoiding unnecessary high-frequency battery drain on mobile devices.
-
-### Q2: Why use a Butterworth filter over Chebyshev or Elliptic filters?
-> **Answer:** The Butterworth filter provides a maximally flat magnitude response in the passband with no ripple. Chebyshev or Elliptic filters introduce passband ripples that distort acceleration amplitudes, compromising feature extraction.
-
-### Q3: Why is total acceleration separated into body and gravitational acceleration?
-> **Answer:** Total acceleration contains both constant Earth gravity ($1.0g$) and dynamic user movement. Gravity ($< 0.3\text{ Hz}$) indicates device orientation relative to the ground, which identifies static postures (standing vs laying). Body acceleration ($> 0.3\text{ Hz}$) captures dynamic movement intensity (walking vs stairs).
-
-### Q4: Why is a sliding window of 2.56 seconds used?
-> **Answer:** A complete human stride during walking takes approximately $1.0 - 1.2\text{ seconds}$. A 2.56-second window ($128\text{ samples}$ at $50\text{ Hz}$) captures at least two full gait cycles, providing sufficient statistical continuity. A 50% overlap prevents data loss at window boundaries.
-
-### Q5: What is Signal Magnitude Area (SMA) and why is it important?
-> **Answer:** $\text{SMA} = \frac{1}{N} \sum (|a_x| + |a_y| + |a_z|)$. It calculates the cumulative acceleration energy expenditure across all axes, providing an orientation-invariant metric that differentiates dynamic movement from static postures.
-
-### Q6: Why do Logistic Regression and SVM achieve ~95.5% accuracy while a Decision Tree gets ~86.4%?
-> **Answer:** Decision Trees create orthogonal axis-aligned splits, which struggle with correlated features in high-dimensional continuous feature spaces ($561$ features). Logistic Regression and SVM with RBF kernels create smooth hyperplanes, providing superior generalization.
-
-### Q7: Why are Sitting and Standing the most confused classes?
-> **Answer:** Both are stationary postures with near-zero dynamic acceleration ($|\mathbf{a}_{\text{body}}| \approx 0$) and near-zero angular velocity. In both states, sensors measure only the $1.0g$ gravity vector. Slight pocket tilts blur the angular boundary between thigh and waist orientation.
-
-### Q8: How was data leakage prevented between training and testing splits?
-> **Answer:** A subject-independent split was enforced: 21 subjects were placed in the training set and 9 unseen subjects in the test set. Models were evaluated exclusively on subjects they had never seen during training.
-
-### Q9: What are the main frequency-domain features extracted via FFT?
-> **Answer:** Fast Fourier Transform (FFT) extracts peak dominant frequency (which reflects stride rate during walking/stairs), spectral energy, spectral skewness, and spectral kurtosis.
-
-### Q10: How can this system be implemented in real-time on a smartphone?
-> **Answer:** A ring buffer collects incoming accelerometer and gyroscope samples at 50 Hz. Every 64 new samples ($1.28\text{ seconds}$), a sliding window of 128 samples is normalized, filtered, and fed to a lightweight model for inference with sub-millisecond latency.
-
----
-
-## 13. References
+## 12. References
 1. Anguita, D., Ghio, A., Oneto, L., Parra, X., & Reyes-Ortiz, J. L. (2013). *A public domain dataset for human activity recognition using smartphones*. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning (ESANN).
 2. Reyes-Ortiz, J. L., Oneto, L., Samà, A., Parra, X., & Anguita, D. (2016). *Transition-aware human activity recognition using smartphones*. Neurocomputing, 171, 754-767.
 3. Figo, D., Diniz, P. C., Ferreira, D. X., & Cardoso, J. M. (2010). *Preprocessing techniques for context recognition from accelerometer data*. Personal and Ubiquitous Computing, 14(7), 645-662.
