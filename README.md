@@ -1,10 +1,11 @@
 # 📱 AI-Based Human Activity Recognition (HAR) Using Smartphone Sensor Data
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Streamlit_Cloud-FF4B4B.svg?style=for-the-badge&logo=streamlit)](https://human-activity-recognition-sensor-data-vignesh.streamlit.app/)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
-[![Streamlit App](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B.svg)](https://streamlit.io/)
 [![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.3%2B-F7931E.svg)](https://scikit-learn.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
+> 🚀 **Live Web App:** [https://human-activity-recognition-sensor-data-vignesh.streamlit.app/](https://human-activity-recognition-sensor-data-vignesh.streamlit.app/)  
 > **ECE & AI Capstone Project**  
 > An end-to-end Machine Learning and Signal Processing pipeline that classifies human physical activities using tri-axial accelerometer and gyroscope data from smartphones.
 
