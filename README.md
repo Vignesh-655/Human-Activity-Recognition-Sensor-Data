@@ -6,7 +6,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 > 🚀 **Live Web App:** [https://human-activity-recognition-sensor-data-vignesh.streamlit.app/](https://human-activity-recognition-sensor-data-vignesh.streamlit.app/)  
-> **ECE & AI Capstone Project**  
+> **Project Owner & Developer:** [Vignesh](https://github.com/Vignesh-655)  
+> **Domain:** ECE & AI Capstone Project  
 > An end-to-end Machine Learning and Signal Processing pipeline that classifies human physical activities using tri-axial accelerometer and gyroscope data from smartphones.
 
 ---
@@ -19,6 +20,7 @@
 - [Model Performance Benchmark](#-model-performance-benchmark)
 - [Repository Structure](#-repository-structure)
 - [Quick Start Guide](#-quick-start-guide)
+- [Author & Project Owner](#-author--project-owner)
 - [License](#-license)
 
 ---
@@ -165,6 +167,14 @@ python src/train.py
 ```bash
 python src/evaluate.py
 ```
+
+---
+
+## 👤 Author & Project Owner
+- **Vignesh** — Lead Developer & Researcher
+- **GitHub Profile:** [@Vignesh-655](https://github.com/Vignesh-655)
+- **Live Streamlit App:** [Human Activity Recognition Studio](https://human-activity-recognition-sensor-data-vignesh.streamlit.app/)
+- **Repository:** [Vignesh-655/Human-Activity-Recognition-Sensor-Data](https://github.com/Vignesh-655/Human-Activity-Recognition-Sensor-Data)
 
 ---
 

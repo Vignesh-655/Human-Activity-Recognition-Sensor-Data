@@ -14,6 +14,11 @@ def create_notebook():
     cells.append(nbf.v4.new_markdown_cell("""# 📱 Capstone: Human Activity Recognition (HAR) Using Sensor Data
 ### ECE & AI Capstone Project | Machine Learning & Signal Processing Pipeline
 
+**Project Owner & Developer:** Vignesh ([GitHub: @Vignesh-655](https://github.com/Vignesh-655))  
+**Live Web Application:** [Streamlit Cloud](https://human-activity-recognition-sensor-data-vignesh.streamlit.app/)  
+**Repository:** [Human-Activity-Recognition-Sensor-Data](https://github.com/Vignesh-655/Human-Activity-Recognition-Sensor-Data)
+
+---
 **Objective:**
 Develop an AI-based Human Activity Recognition (HAR) system that utilizes tri-axial accelerometer and gyroscope data from a smartphone to automatically classify human physical activities:
 - 🚶 **WALKING**

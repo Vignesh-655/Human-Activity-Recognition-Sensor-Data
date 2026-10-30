@@ -223,6 +223,7 @@ st.markdown("""
         <span class="pill pill-blue">📱 Smartphone MEMS IMU</span>
         <span class="pill pill-green">⚡ 50 Hz Constant Rate</span>
         <span class="pill pill-purple">🏆 95.59% Test Accuracy</span>
+        <span class="pill" style="background-color: #fef3c7; color: #92400e;">👤 Owner: Vignesh</span>
     </div>
     <div class="hero-title">Human Activity Recognition (HAR) Studio</div>
     <div class="hero-subtitle">
@@ -816,3 +817,12 @@ with tab_simulator:
                 columns={"body_gyro_x": "Gyro X", "body_gyro_y": "Gyro Y", "body_gyro_z": "Gyro Z"}
             )
             st.line_chart(p_gyro, height=220)
+
+# Global Footer
+st.markdown("---")
+st.markdown("""
+<div style="text-align: center; color: #64748b; font-size: 0.85rem; padding: 1.5rem 0;">
+    <strong>Human Activity Recognition (HAR) Studio</strong> | Designed & Developed by <strong><a href="https://github.com/Vignesh-655" target="_blank" style="color: #3b82f6; text-decoration: none;">Vignesh</a></strong><br>
+    ECE & AI Capstone Project | <a href="https://github.com/Vignesh-655/Human-Activity-Recognition-Sensor-Data" target="_blank" style="color: #64748b;">GitHub Repository</a>
+</div>
+""", unsafe_allow_html=True)

@@ -1,5 +1,8 @@
 # Human Activity Recognition (HAR) Using Smartphone Sensor Data
 ## Comprehensive Capstone Project Report
+**Project Owner & Developer:** Vignesh  
+**GitHub:** [@Vignesh-655](https://github.com/Vignesh-655)  
+**Live Application:** [Streamlit Cloud Demo](https://human-activity-recognition-sensor-data-vignesh.streamlit.app/)  
 **Department:** Electronics & Communication Engineering / Artificial Intelligence & Data Science  
 **Domain:** Wearable Computing, Sensor Signal Processing, Machine Learning  
 **Project Title:** AI-Based Human Activity Recognition (HAR) Using Smartphone Tri-Axial Accelerometer and Gyroscope Data  
@@ -261,5 +264,6 @@ d:/Project/
 ```
 
 ---
-*Report prepared for ECE Capstone Assessment.*
+*Capstone Project Report prepared, implemented, and submitted by **Vignesh** for ECE & AI Assessment.*
+*Repository: [https://github.com/Vignesh-655/Human-Activity-Recognition-Sensor-Data](https://github.com/Vignesh-655/Human-Activity-Recognition-Sensor-Data)*
 
