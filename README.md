@@ -207,3 +207,4 @@ If you haven't installed Git on your machine, you can either install [Git for Wi
 
 ## 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
+

@@ -70,3 +70,4 @@ def fit_and_save_scaler(X_train, scaler_type="standard", save_path="models/scale
 def load_scaler(save_path="models/scaler.pkl"):
     """Load previously saved scaler."""
     return joblib.load(save_path)
+
