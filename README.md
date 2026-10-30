@@ -19,8 +19,6 @@
 - [Model Performance Benchmark](#-model-performance-benchmark)
 - [Repository Structure](#-repository-structure)
 - [Quick Start Guide](#-quick-start-guide)
-- [Interactive Streamlit Dashboard](#-interactive-streamlit-dashboard)
-- [Pushing to GitHub (Step-by-Step)](#-pushing-to-github-step-by-step)
 - [License](#-license)
 
 ---
@@ -167,42 +165,6 @@ python src/train.py
 ```bash
 python src/evaluate.py
 ```
-
----
-
-## 🌐 Pushing to GitHub (Step-by-Step)
-
-If you haven't installed Git on your machine, you can either install [Git for Windows](https://git-scm.com/download/win) or [GitHub Desktop](https://desktop.github.com/).
-
-### Method A: Using Git Command Line
-1. **Initialize the local Git repository:**
-   ```bash
-   git init
-   git branch -M main
-   ```
-2. **Add all project files:**
-   ```bash
-   git add .
-   ```
-3. **Commit the project:**
-   ```bash
-   git commit -m "feat: complete Human Activity Recognition (HAR) capstone project with Streamlit dashboard and reports"
-   ```
-4. **Create a new repository on GitHub:**
-   - Go to [GitHub.com](https://github.com/new).
-   - Name it `Human-Activity-Recognition-Sensor-Data`.
-   - Leave it empty (do NOT check "Initialize with README").
-5. **Link and Push:**
-   ```bash
-   git remote add origin https://github.com/<your-username>/Human-Activity-Recognition-Sensor-Data.git
-   git push -u origin main
-   ```
-
-### Method B: Using GitHub Desktop (Graphical User Interface)
-1. Open **GitHub Desktop**.
-2. Click **File -> Add Local Repository** and choose `d:\Project`.
-3. Click **Create a repository** if prompted.
-4. Click **Publish repository** to push it directly to your GitHub account!
 
 ---
 
